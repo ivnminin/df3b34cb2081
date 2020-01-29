@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {% block head %}
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            {% block title %} Default Title {% endblock %}
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        {% endblock %}
+    </head>
+
+    <body>
+
+        {% block nav %}
+
+        {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <!--<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>-->
+        <!--<script>-->
+            <!--$(document).foundation();-->
+        <!--</script>-->
+
+    </body>
+
+    {% block  script %}
+
+    {% endblock %}
+</html>

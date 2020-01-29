@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+<!--{% set active_page = 'index' %}-->
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+
+{% block title %} Add Task {% endblock %}
+
+{% block content %}
+
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <div class="grid-container">
+            <br>
+            <br>
+            <h5>Необходимо заполнить поля:</h5>
+            <div class="grid-x" style="padding-top: 10px">
+                <div class="medium-8 cell">
+                    <label>Функция:
+                        <input type="text" placeholder="Функция" name="function" autocomplete="off">
+                    </label>
+                    {% if form.function.errors %}
+                        {% for error in form.function.errors %}
+                            <p class="error-title" style="color: red">{{ error }}<p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="medium-8 cell">
+                    <label>Интервал, в днях:
+                        <input type="text" placeholder="Интервал, в днях" name="interval" autocomplete="off">
+                    </label>
+                    {% if form.interval.errors %}
+                        {% for error in form.interval.errors %}
+                            <p class="error-title" style="color: red">{{ error }}<p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="medium-8 cell">
+                    <label>Шаг, в часах:
+                        <input type="text" placeholder="Шаг, в часах:" name="step" autocomplete="off">
+                    </label>
+                    {% if form.step.errors %}
+                        {% for error in form.step.errors %}
+                            <p class="error-title" style="color: red">{{ error }}<p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="medium-8 cell">
+                    <input type="submit" id="submit" class="button" value="Submit">
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
